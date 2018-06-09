@@ -1,5 +1,33 @@
+html {
+  min-height: 100%;
+}
 body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
+  height: 100%;
   font-family: sans-serif;
+}
+.ais-RefinementList{
+  float: left;
+  width: 20%;
+  text-align: left;
+  padding-left: 25px;
+}
+.ais-SearchBox {
+  width:50%;
+  max-width: 250px;
+}
+.ais-Hits {
+  width: 80%;
+  float: right;
+}
+
+@media (min-width: 600px){
+  .ais-Hits-list {
+    padding : 0 10%;
+  }
+  .ais-Hits-item {
+    min-height: 200px;
+  }
 }
