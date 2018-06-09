@@ -10,10 +10,30 @@ import {
   RefinementList
 } from 'react-instantsearch/dom';
 
-function Search() {
+import {connectSearchBox} from 'react-instantsearch/connectors';
+
+
+const MySearchBox = ({currentRefinement, refine, setter}) =>
+<input
+  type="text"
+  value={currentRefinement}
+  onChange={e => {
+    setter(e);
+    refine(e.target.value)
+    }}
+/>;
+
+const ConnectedSearchBox = connectSearchBox(MySearchBox);
+
+// const refine = (e) => {
+//   console.log(e)
+// }
+
+function Search({setter}) {
   return (
     <div className="container">
-      <SearchBox />
+      <ConnectedSearchBox setter={setter}/>
+      {/* <MySearchBox /> */}
       <RefinementList attribute="category" />
       <Hits hitComponent={Product} />
     </div>
@@ -29,8 +49,20 @@ function Product({ hit }) {
     </div>
   );
 }
+// const ConnectedSearchBox = connectSearchBox(MySearchBox);
 
 class App extends Component {
+
+  state = {
+    isSearching: ''
+  }
+
+  setter = (event) => {
+    this.setState({isSearching: event.target.value})
+    console.log('state coming')
+    console.log(this.state.isSearching);
+  }
+
   render() {
     return (
       <div className="App">
@@ -43,9 +75,9 @@ class App extends Component {
           apiKey="3d9875e51fbd20c7754e65422f7ce5e1"
           indexName="bestbuy"
         >
-        <Search />
+        {/* <ConnectedSearchBox /> */}
+        <Search setter={this.setter}/>
     </InstantSearch>
-  yoyo
       </div>
     );
   }
