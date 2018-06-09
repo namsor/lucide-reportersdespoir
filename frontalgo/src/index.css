@@ -8,7 +8,17 @@ body {
   height: 100%;
   font-family: sans-serif;
 }
+
 .ais-SearchBox {
   width:50%;
   max-width: 250px;
+}
+
+@media (min-width: 600px){
+  .ais-Hits-list {
+    padding : 0 10%;
+  }
+  .ais-Hits-item {
+    min-height: 200px;
+  }
 }
