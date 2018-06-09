@@ -29,13 +29,15 @@ const ConnectedSearchBox = connectSearchBox(MySearchBox);
 //   console.log(e)
 // }
 
-function Search({setter}) {
+function Search({setter, isSearching}) {
   return (
     <div className="container">
-      <ConnectedSearchBox setter={setter}/>
+      {/* <ConnectedSearchBox setter={setter}/> */}
       {/* <MySearchBox /> */}
-      <RefinementList attribute="category" />
-      <Hits hitComponent={Product} />
+      {/* <RefinementList attribute="category" /> */}
+      <Hits hitComponent={Product}/>
+      {/* <RefinementList attribute="category" />
+      <Hits hitComponent={Product} /> */}
     </div>
   );
 }
@@ -75,8 +77,13 @@ class App extends Component {
           apiKey="3d9875e51fbd20c7754e65422f7ce5e1"
           indexName="bestbuy"
         >
+        <ConnectedSearchBox setter={this.setter} />
+        {/* <RefinementList attribute="category" /> */}
+        {(this.state.isSearching) ? <RefinementList attribute="category" /> : 'hello'}
+        {(this.state.isSearching) ? <Hits hitComponent={Product}/> : 'hello'}
+        {/* <Search /> */}
         {/* <ConnectedSearchBox /> */}
-        <Search setter={this.setter}/>
+        {/* {(!this.state.isSearching) ? 'hello' : <Search setter={this.setter}/>} */}
     </InstantSearch>
       </div>
     );
