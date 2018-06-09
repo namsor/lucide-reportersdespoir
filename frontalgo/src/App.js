@@ -12,7 +12,6 @@ import {
 
 import {connectSearchBox} from 'react-instantsearch/connectors';
 
-
 const MySearchBox = ({currentRefinement, refine, setter}) =>
 <input
   type="text"
@@ -25,23 +24,6 @@ const MySearchBox = ({currentRefinement, refine, setter}) =>
 
 const ConnectedSearchBox = connectSearchBox(MySearchBox);
 
-// const refine = (e) => {
-//   console.log(e)
-// }
-
-function Search({setter, isSearching}) {
-  return (
-    <div className="container">
-      {/* <ConnectedSearchBox setter={setter}/> */}
-      {/* <MySearchBox /> */}
-      {/* <RefinementList attribute="category" /> */}
-      <Hits hitComponent={Product}/>
-      {/* <RefinementList attribute="category" />
-      <Hits hitComponent={Product} /> */}
-    </div>
-  );
-}
-
 function Product({ hit }) {
   return (
     <div style={{ marginTop: '10px' }}>
@@ -51,7 +33,6 @@ function Product({ hit }) {
     </div>
   );
 }
-// const ConnectedSearchBox = connectSearchBox(MySearchBox);
 
 class App extends Component {
 
@@ -78,12 +59,8 @@ class App extends Component {
           indexName="bestbuy"
         >
         <ConnectedSearchBox setter={this.setter} />
-        {/* <RefinementList attribute="category" /> */}
-        {(this.state.isSearching) ? <RefinementList attribute="category" /> : 'hello'}
-        {(this.state.isSearching) ? <Hits hitComponent={Product}/> : 'hello'}
-        {/* <Search /> */}
-        {/* <ConnectedSearchBox /> */}
-        {/* {(!this.state.isSearching) ? 'hello' : <Search setter={this.setter}/>} */}
+        {(this.state.isSearching) ? <RefinementList attribute="category" /> : ''}
+        {(this.state.isSearching) ? <Hits hitComponent={Product}/> : ''}
     </InstantSearch>
       </div>
     );
