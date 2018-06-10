@@ -58,11 +58,11 @@ var Content = connectStateResults(
 
     if (searchState.query) {
       var hits = searchResults.hits;
-      var test = _.keyBy(hits, 'source');
+      var test = _.keyBy(hits, 'Source');
       _.forEach(test, (item, key) => {
         var i = 0;
         _.forEach(hits, hit => {
-          if (key === hit.source) {
+          if (key === hit.Source) {
             test[key] = i++;
           }
         })
@@ -73,7 +73,7 @@ var Content = connectStateResults(
         labels: legend,
         datasets: [
           {
-            label: 'My First dataset',
+            label: 'Total',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',
@@ -105,17 +105,18 @@ var Content = connectStateResults(
       var dataset2 = [];
       legend = [];
       var datalieu = {};
-      test = _.keyBy(hits, 'lieu');
+      test = _.keyBy(hits, 'Lieu');
       _.forEach(test, (item, key) => {
         var i = 0;
         _.forEach(hits, hit => {
-          if (key === hit.lieu) {
+          if (key === hit.Lieu) {
             test[key] = i++;
           }
         })
-        dataset2.push(test[key]);
-        if (test[key] > 0)
-          legend.push(key);
+        if (test[key] > 0) {
+          dataset2.push(test[key]);
+          legend.push(key + ' - ' + test[key]);
+        }
       })
       datalieu = {
         labels: legend,
@@ -135,7 +136,7 @@ var Content = connectStateResults(
           }
         ]
       }
-      console.log(datalieu);
+      console.log(datalieu)
       return (
         <div className='charts'>
           <div className='source'>
@@ -164,20 +165,18 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Analytics page</h1>
         </header>
         <button>
           <Link to='/' > Articles search</Link>
         </button>
         <InstantSearch
-          appId="FT8DVN3K2H"
-          apiKey="7f8130dd9dd898a6646c9eb80a968b60"
-          indexName="corpus"
+          appId="89X1HYV9FR"
+          apiKey="50b8887a34b8f6c7420ffe27fbb855e2"
+          indexName="reportersdespoirs"
         >
           <Search />
           <Content />
