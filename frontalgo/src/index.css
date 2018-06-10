@@ -8,10 +8,19 @@ body {
   height: 100%;
   font-family: sans-serif;
 }
-
+.ais-RefinementList{
+  float: left;
+  width: 20%;
+  text-align: left;
+  padding-left: 25px;
+}
 .ais-SearchBox {
   width:50%;
   max-width: 250px;
+}
+.ais-Hits {
+  width: 80%;
+  float: right;
 }
 
 @media (min-width: 600px){
