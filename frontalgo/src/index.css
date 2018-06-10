@@ -1,6 +1,7 @@
 html {
   min-height: 100%;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +9,7 @@ body {
   height: 100%;
   font-family: sans-serif;
 }
+
 .ais-RefinementList{
   float: left;
   width: 20%;
@@ -22,11 +24,56 @@ body {
   width: 80%;
   float: right;
 }
+.ais-Hits-item .hit-img {
+  width: 100%;
+  min-height: 300px;
+  display: inline-block;
+}
+.ais-Hits-item .hit-img img {
+  object-fit: cover;
+  object-position: top;
+  height: 100%;
+  min-width: calc(100% - 25px);
+  max-height: 300px;
+  min-height: 300px;
+  max-width: calc(100% - 25px);
+  display: inherit;
+}
+.ais-Hits-item {
+  min-height: 100%;
+  padding : 0;
+}
 
+.ais-Hits-item a {
+  width: 100%;
+  min-height: 380px;
+  max-height: 380px;
+  display: inline-block;
+}
+.hit-title {
+  padding: 10px 10px;
+  max-height: 60px;
+  min-height: 60px;
+  font-size: 18px;
+}
+.hit-content {
+  overflow-y: hidden;
+  min-height: 108px;
+  max-height: 108px;
+  display: inline-block;
+}
+.hit-content p::first-letter {
+  text-transform: capitalize;
+}
+.hit-content p {
+  height: 100px;
+  display: inline-block;
+  white-space: pre-line;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+}
 @media (min-width: 600px){
-  .ais-Hits-list {
-    padding : 0 10%;
-  }
   .ais-Hits-item {
     min-height: 200px;
   }

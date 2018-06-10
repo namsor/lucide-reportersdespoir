@@ -39,23 +39,23 @@ function Product({ hit }) {
         <Highlight attribute="name" hit={hit} />
       </span> */}
       <a href={hit.url} target='_blank'>
-        <span className='hit-img'>
+        <div className='hit-img'>
           <img src={(hit.main_pic.includes('http', 0)) ? hit.main_pic : 'https://images-na.ssl-images-amazon.com/images/I/513ni1h94wL._SX331_BO1,204,203,200_.jpg'}></img>
-        </span>
-        <span className='hit-title'>
+        </div>
+        <div className='hit-title'>
         {/* <Highlight attribute="title" hit={hit} /> */}
-          <h1>{hit.title}</h1>
-        </span>
-        <span className='hit-content'>
-          <p>{hit.content}</p>
-        </span>
-        <span className='hit-author'>
-          <p>{hit.author}</p>
-        </span>
-        <span className='hit-src'>
-          <p>{hit.source}</p>
-        </span>
+        <span>{hit.title}</span>
+        </div>
       </a>
+      <span className='hit-content'>
+        <p>{hit.content}</p>
+      </span>
+      <span className='hit-author'>
+        <p>{hit.author}</p>
+      </span>
+      <span className='hit-src'>
+        <p>{hit.source}</p>
+      </span>
     </div>
   );
 }
@@ -76,7 +76,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">App</h1>
         </header>
         <button>
