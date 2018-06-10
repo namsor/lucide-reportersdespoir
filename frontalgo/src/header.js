@@ -5,7 +5,7 @@ class Header extends Component {
     return (
       <div className='MyHeader'>
         <header className="App-header">
-          <h1 className="App-title">App</h1>
+          <h1 className="App-title">Lucide</h1>
         </header>
         <button>
           <Link to='/analytics'>Analytic search</Link>
