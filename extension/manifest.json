@@ -8,7 +8,7 @@
   "content_scripts": [
     {
       "matches": ["https://*/*", "https://*/*/*"],
-      "js":["thirdParty/jquery-3.3.1.js", "content-script.js"]
+      "js":["jquery.js", "content-script.js"]
     }
   ],
   "browser_action": {
