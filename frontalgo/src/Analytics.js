@@ -115,7 +115,7 @@ var Content = connectStateResults(
         })
         dataset2.push(test[key]);
         if (test[key] > 0)
-          legend.push(key);
+          legend.push(key + ' - ' + test[key]);
       })
       datalieu = {
         labels: legend,
@@ -135,7 +135,6 @@ var Content = connectStateResults(
           }
         ]
       }
-      console.log(datalieu);
       return (
         <div className='charts'>
           <div className='source'>
@@ -164,7 +163,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
