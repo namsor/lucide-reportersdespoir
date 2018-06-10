@@ -36,27 +36,23 @@ function Product({ hit }) {
   hello++;
   return (
     <div>
-      {/* <span className="hit-name">
-        <Highlight attribute="name" hit={hit} />
-      </span> */}
-      <a href={hit.url} target='_blank'>
+      <a href={hit.URL} target='_blank'>
         <div className='hit-img'>
-          <img src={(hit.main_pic.includes('http', 0)) ?
-          hit.main_pic : '/placeholder/' + String(hello % 7 + 1) + ".jpg" }></img>
+          <img src={(hit.MainPIC.includes('http', 0)) ?
+          hit.MainPIC : '/placeholder/' + String(hello % 7 + 1) + ".jpg" }></img>
         </div>
         <div className='hit-title'>
-        {/* <Highlight attribute="title" hit={hit} /> */}
-        <span>{hit.title}</span>
+        <span>{hit.Title}</span>
         </div>
       </a>
       <span className='hit-content'>
-        <p>{hit.content}</p>
+        <p>{hit.Content}</p>
       </span>
       <span className='hit-author'>
-        <p>{hit.author}</p>
+        <p>{hit.Author}</p>
       </span>
       <span className='hit-src'>
-        <p>{hit.source}</p>
+        <p>{hit.Source}</p>
       </span>
     </div>
   );
@@ -79,13 +75,9 @@ class App extends Component {
       <div className="App">
       <Header />
         <InstantSearch
-          appId="FT8DVN3K2H"
-          apiKey="7f8130dd9dd898a6646c9eb80a968b60"
-          indexName="corpus"
-
-          // appId="latency"
-          // apiKey="3d9875e51fbd20c7754e65422f7ce5e1"
-          // indexName="bestbuy"
+          appId="89X1HYV9FR"
+          apiKey="50b8887a34b8f6c7420ffe27fbb855e2"
+          indexName="reportersdespoirs"
         >
         <ConnectedSearchBox setter={this.setter} />
         {(this.state.isSearching) ? <RefinementList attribute="category" /> : ''}
