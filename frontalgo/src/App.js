@@ -28,21 +28,21 @@ const MySearchBox = ({currentRefinement, refine, setter}) => {
     </div>
   )
 };
-
+var hello = 0;
 const ConnectedSearchBox = connectSearchBox(MySearchBox);
 
 function Product({ hit }) {
   console.log(hit);
-  console.log(String(parseInt(Math.random() * 10 % 8)) + ".jpg");
+  hello++;
   return (
-    <div style={{ marginTop: '10px' }}>
+    <div>
       {/* <span className="hit-name">
         <Highlight attribute="name" hit={hit} />
       </span> */}
       <a href={hit.url} target='_blank'>
         <div className='hit-img'>
           <img src={(hit.main_pic.includes('http', 0)) ?
-          hit.main_pic : '/placeholder/' + String(parseInt(Math.random() * 10 % 7) + 1) + ".jpg" }></img>
+          hit.main_pic : '/placeholder/' + String(hello % 7 + 1) + ".jpg" }></img>
         </div>
         <div className='hit-title'>
         {/* <Highlight attribute="title" hit={hit} /> */}

@@ -21,8 +21,9 @@ body {
   max-width: 250px;
 }
 .ais-Hits {
-  width: 80%;
+  width: calc(80% - 20px);
   float: right;
+  margin-right: 20px;
 }
 .ais-Hits-item .hit-img {
   width: 100%;
@@ -33,10 +34,10 @@ body {
   object-fit: cover;
   object-position: top;
   height: 100%;
-  min-width: calc(100% - 25px);
+  min-width: 100%;
   max-height: 300px;
   min-height: 300px;
-  max-width: calc(100% - 25px);
+  max-width: 100%;
   display: inherit;
 }
 .ais-Hits-item {
@@ -46,8 +47,8 @@ body {
 
 .ais-Hits-item a {
   width: 100%;
-  min-height: 380px;
-  max-height: 380px;
+  min-height: 375px;
+  max-height: 375px;
   display: inline-block;
 }
 .hit-title {
@@ -60,6 +61,8 @@ body {
   overflow-y: hidden;
   min-height: 108px;
   max-height: 108px;
+  width: calc(100% - 20px);
+  padding: 0 10px;
   display: inline-block;
 }
 .hit-content p::first-letter {
