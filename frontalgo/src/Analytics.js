@@ -15,7 +15,7 @@ import {
 import { connectSearchBox, createConnector, connectStateResults } from 'react-instantsearch/connectors';
 
 import _ from 'lodash';
-import { HorizontalBar } from 'react-chartjs-2';
+import { HorizontalBar, Pie } from 'react-chartjs-2';
 
 function Search() {
   return (
@@ -54,7 +54,7 @@ var Content = connectStateResults(
   ({ searchState, searchResults, setter }) => {
     var dataset = [];
     var legend = [];
-    var data = {};
+    var datasource = {};
 
     if (searchState.query) {
       var hits = searchResults.hits;
@@ -69,7 +69,7 @@ var Content = connectStateResults(
         dataset.push(test[key]);
         legend.push(key);
       })
-      data = {
+      datasource = {
         labels: legend,
         datasets: [
           {
@@ -101,10 +101,49 @@ var Content = connectStateResults(
           display: false,
         },
       };
-  
+
+      var dataset2 = [];
+      legend = [];
+      var datalieu = {};
+      test = _.keyBy(hits, 'lieu');
+      _.forEach(test, (item, key) => {
+        var i = 0;
+        _.forEach(hits, hit => {
+          if (key === hit.lieu) {
+            test[key] = i++;
+          }
+        })
+        dataset2.push(test[key]);
+        if (test[key] > 0)
+          legend.push(key);
+      })
+      datalieu = {
+        labels: legend,
+        datasets: [
+          {
+            data: dataset2,
+            backgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56'
+            ],
+            hoverBackgroundColor: [
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56'
+            ]
+          }
+        ]
+      }
+      console.log(datalieu);
       return (
-        <div className = "source">
-          <HorizontalBar data={data} options={options}/>
+        <div className='charts'>
+          <div className='source'>
+            <HorizontalBar data={datasource} options={options}/>
+          </div>
+          <div className='lieu'>
+            <Pie data={datalieu} />
+          </div>
         </div>
       )
     } else {
