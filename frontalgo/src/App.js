@@ -33,6 +33,7 @@ const ConnectedSearchBox = connectSearchBox(MySearchBox);
 
 function Product({ hit }) {
   console.log(hit);
+  console.log(String(parseInt(Math.random() * 10 % 8)) + ".jpg");
   return (
     <div style={{ marginTop: '10px' }}>
       {/* <span className="hit-name">
@@ -40,7 +41,8 @@ function Product({ hit }) {
       </span> */}
       <a href={hit.url} target='_blank'>
         <div className='hit-img'>
-          <img src={(hit.main_pic.includes('http', 0)) ? hit.main_pic : 'https://images-na.ssl-images-amazon.com/images/I/513ni1h94wL._SX331_BO1,204,203,200_.jpg'}></img>
+          <img src={(hit.main_pic.includes('http', 0)) ?
+          hit.main_pic : '/placeholder/' + String(parseInt(Math.random() * 10 % 7) + 1) + ".jpg" }></img>
         </div>
         <div className='hit-title'>
         {/* <Highlight attribute="title" hit={hit} /> */}
