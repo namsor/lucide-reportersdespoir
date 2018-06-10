@@ -36,12 +36,12 @@ function Product({ hit }) {
       {/* <span className="hit-name">
         <Highlight attribute="name" hit={hit} />
       </span> */}
-      <a href={hit.URL}>
+      <a href={hit.url}>
         <span className='hit-img'>
           <img src={(hit.main_pic) ? hit.main_pic : 'https://images-na.ssl-images-amazon.com/images/I/513ni1h94wL._SX331_BO1,204,203,200_.jpg'}></img>
         </span>
         <span className='hit-title'>
-        <Highlight attribute="name" hit={hit} />
+        {/* <Highlight attribute="title" hit={hit} /> */}
           <h1>{hit.title}</h1>
         </span>
         <span className='hit-content'>
