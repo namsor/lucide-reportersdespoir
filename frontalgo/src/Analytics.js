@@ -73,7 +73,7 @@ var Content = connectStateResults(
         labels: legend,
         datasets: [
           {
-            label: 'My First dataset',
+            label: 'Total',
             fill: false,
             lineTension: 0.1,
             backgroundColor: 'rgba(75,192,192,0.4)',
@@ -169,7 +169,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Analytics page</h1>
         </header>
         <button>
           <Link to='/' > Articles search</Link>
