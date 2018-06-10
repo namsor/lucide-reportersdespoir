@@ -77,10 +77,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">App</h1>
+          <h1 className="App-title">Analytics page</h1>
         </header>
         <button>
-          <Link to='/analytics'>Analytic search</Link>
+          <Link to='/' > Articles search</Link>
         </button>
         <InstantSearch
           appId="FT8DVN3K2H"
