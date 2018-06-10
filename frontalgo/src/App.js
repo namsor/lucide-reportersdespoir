@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Header from './header';
 import { Link } from 'react-router-dom'
 
 import {
@@ -77,12 +77,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">App</h1>
-        </header>
-        <button>
-          <Link to='/analytics'>Analytic search</Link>
-        </button>
+      <Header />
         <InstantSearch
           appId="FT8DVN3K2H"
           apiKey="7f8130dd9dd898a6646c9eb80a968b60"
