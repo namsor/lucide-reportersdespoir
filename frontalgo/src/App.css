@@ -1,5 +1,10 @@
+@fontface {
+  font-family: 'Roboto', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Roboto')
+}
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -7,9 +12,13 @@
   height: 80px;
 }
 
+.App-title {
+  padding-left: 300px;
+  color: #e2c593;
+  text-align: left;
+}
 .App-header {
-  background-color: #222;
-  height: 150px;
+  height: 50px;
   padding: 20px;
   color: white;
 }
